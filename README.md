@@ -1,5 +1,7 @@
 # Hyperledger Voting System
 
+The project idea that we have come up with is a blockchain-based voting application. It provides the voters a hassle-free, convenient and secure way to cast their vote, while also assuring that the system is secure from malicious cyber activities. 
+
 ## Setup Environment
 
 Insert setup instructions here. Make a script?
