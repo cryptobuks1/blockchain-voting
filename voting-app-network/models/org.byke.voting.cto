@@ -9,21 +9,34 @@ asset ifVoted identified by voterID {
   o Boolean votedOrNot
 }
 
+/**
+ *  This asset will be the politicalparty that gets created which the voter will choose to vote for
+ *  If a voter casts a vote for them their total vote counter will increase.
+ */
 asset candidateVote identified by politicalParty {
   o String politicalParty
   o Integer totalVote
 }
 
+/**
+ * The participant model for a voter 
+ */
 participant voter identified by voterID {
   o String voterID
   o String fullName
 }
 
+/**
+ * A transaction which allows the voter to cast a vote if the voter has not already voted
+ */
 transaction vote {
   --> candidateVote candidateVoteAsset
   --> ifVoted ifVotedAsset
 }
 
+/**
+ * The event gets called whenever a vote is casted 
+ */
 event VoteNotification {
   --> candidateVote candidateVoteAsset
 }
