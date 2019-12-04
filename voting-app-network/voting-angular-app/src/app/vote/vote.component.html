@@ -11,38 +11,34 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
+
+<!-- Vote Screen -->
+
 <br>
 <div class="col-md-12" align="center">
-    <h1 class="asset-title" id='assetName'>Ballot</h1>
+	<h1 class="asset-title" id='assetName'>Ballot</h1>
 </div>
-
 <div id="addTransactionModal" aria-labelledby="addTransactionModalLabel">
-  <div class="modal-dialog" role="document">
 
-    <div class="modal-content">
-      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
-          <strong>Error:</strong> {{errorMessage}}
-      </div>
-      <form [formGroup]="myForm">
-        <div class="modal-body">
+	<!-- Error Message -->
+ 	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        <strong>Error:</strong> {{errorMessage}}
+    </div>
 
-              <div class="form-group text-left">
+    <!-- Ballot -->
+    <form [formGroup]="myForm">
+    	<div class="modal-body">
+            <div class="form-group text-left">
                 <label for="ifVotedAsset">Voter ID</label>
-                    <input formControlName="ifVotedAsset" type="text" class="form-control">
-              </div>
-              <div class="form-group text-left">
+                <input formControlName="ifVotedAsset" type="text" class="form-control">
+            </div>
+            <div class="form-group text-left">
                 <label for="candidateVoteAsset">Candidate</label>
-                  <input formControlName="candidateVoteAsset" type="text" class="form-control">
-                    <!--<select id="candidateVoteAsset">
-                      <option value="Liberals">Liberals</option>
-                      <option value="Conservatives">Conservatives</option>
-                      <option value="NDP">NDP</option>
-                      <option value="Bloc Quebecois">Bloc Quebecois</option>
-                      <option value="Green">Green</option>
-                      <option value="PPC">PPC</option>
-                    </select>-->
-              </div>
-              <label><strong>Options:</strong> Liberal, NDP, Conservative, Green, PPC, BQ</label>
+                <input formControlName="candidateVoteAsset" type="text" class="form-control">
+            </div>
+            <label><strong>Options:</strong> Liberal, NDP, Conservative, Green, PPC, BQ</label>
         </div>
         <div class="modal-footer">
             <button (click)="addTransaction(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Confirm</button>
