@@ -12,6 +12,9 @@
  * limitations under the License.
  */
 
+/**
+ * this permission gives the network admin access to user resources
+ */
 rule NetworkAdminUser {
     description: "Grant business network administrators full access to user resources"
     participant: "org.hyperledger.composer.system.NetworkAdmin"
@@ -20,6 +23,9 @@ rule NetworkAdminUser {
     action: ALLOW
 }
 
+/**
+ * this permission gives the network admin access to the system resources
+ */
 rule NetworkAdminSystem {
     description: "Grant business network administrators full access to system resources"
     participant: "org.hyperledger.composer.system.NetworkAdmin"
@@ -28,6 +34,9 @@ rule NetworkAdminSystem {
     action: ALLOW
 }
 
+/**
+ * this permission gives participants access to their resources
+ */
 rule AllParticipantsHaveAccessToAllResources {
   description: "Allow all participants to have access to all resources and make transactions"
   participant: "ANY"
